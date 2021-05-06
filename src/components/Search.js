@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux';
 import _ from 'lodash';
 import ProductSketchContainer from './ProductSketchContainer';
 import $ from 'jquery';
+import { CURRENCY } from '../config/config_paypal';
 
 
 const Search = (props) => {
@@ -113,7 +114,7 @@ const Search = (props) => {
             $('#price_max').removeAttr('disabled', 'false');
         }
         const isValidate = () => {
-            return name !== '' || category !== '' || +article !== 0 || +priceMIN !== 0 && +priceMAX !== 0 && +priceMIN < +priceMAX  ? false : true
+            return name !== '' || category !== '' || +article !== 0 || (+priceMIN !== 0 && +priceMAX !== 0 && +priceMIN < +priceMAX)  ? false : true
         };
         setIsInvalid(isValidate());
     },[name, article, category, priceMAX, priceMIN])
@@ -140,10 +141,10 @@ const Search = (props) => {
                                 </div>
                                 <div className="form-group_wrapper form-group-wrapper_price">
                                     <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-price_min', 'Search from price min, ₪', 'number', 'priceMIN', 'price_min', handleChange, 'Please enter price minimum' )}
+                                        {getInputElementSmall('input input-selection', 'input-price_min', 'Search from price min, ' + CURRENCY, 'number', 'priceMIN', 'price_min', handleChange, 'Please enter price minimum' )}
                                     </div>
                                     <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-price_max', 'Search to price max, ₪', 'number', 'priceMAX', 'price_max', handleChange, 'Please enter price maximum' )}
+                                        {getInputElementSmall('input input-selection', 'input-price_max', 'Search to price max, ' + CURRENCY, 'number', 'priceMAX', 'price_max', handleChange, 'Please enter price maximum' )}
                                     </div>
                                 </div>
                                 <div className="button-group">
