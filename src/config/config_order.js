@@ -1,0 +1,1 @@
+export const DIGITS_ID = 6;
