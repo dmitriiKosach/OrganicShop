@@ -74,7 +74,7 @@ const Navigation = (props) => {
                 </li>
                 : <li key={link.path} className="nav-item">
                     <NavLink className="nav-link" to={link.path}>
-                        <img className="icon icon_basket" src={supermarketGreen} alt="search"/>
+                        <img className="icon" src={supermarketGreen} alt="search"/>
                         <div className="icon_count">{props.productList.length}</div>
                     </NavLink>
                 </li>

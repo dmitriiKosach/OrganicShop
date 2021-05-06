@@ -8,9 +8,8 @@ const StatisticsTableClients = (props) => {
 
     const maxVisitedOfClient = getStatistics(props.orders, "", "statClients");
 
-    for (let entry of maxVisitedOfClient){
+    for (let entry of maxVisitedOfClient) {
         arrayEntriesClients.push(entry);
-
     }
 
     let itemProduct = arrayEntriesClients.map(entry => {
@@ -33,7 +32,7 @@ const StatisticsTableClients = (props) => {
                 <thead >
                     <tr>
                         <th>#</th>
-                        <th>Client name</th>
+                        <th>Customer name</th>
                         <th>Number of purchases</th>
                         <th>Total purchases</th>
                     </tr>

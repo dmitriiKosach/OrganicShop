@@ -130,6 +130,7 @@ input::-webkit-outer-spin-button {
     border-radius: 50%;
     color: #ffffff;
     text-align: center
+
 }
 /*-----------End Header--------------*/
 
@@ -169,6 +170,10 @@ input::-webkit-outer-spin-button {
     font-size: 13px;
     font-weight: 300;
     line-height: 1.2;
+    transition: color .2s linear;
+}
+.info-title:hover{
+    color: #58b85a;
 }
 /*---------End UserInfo---------*/
 
@@ -346,7 +351,7 @@ input::-webkit-outer-spin-button {
 }
 
 .input-wrapper{
-     display: flex;
+    display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -424,7 +429,7 @@ input::-webkit-outer-spin-button {
 .sketch-item{
     height: 453px;
     width: 255px;
-    margin: 15px;
+    margin: 35px 15px;
 }
 .sketch{
     overflow: hidden;
@@ -452,7 +457,7 @@ input::-webkit-outer-spin-button {
 .sketch-content_info{
     display: flex;
     flex-direction: column;
-    height: 100px;
+    height: 135px;
 }
 
 .sketch-content-info_title{
@@ -462,7 +467,7 @@ input::-webkit-outer-spin-button {
 }
 
 .sketch-content-info_subtitle{
-    height: 125px;
+    overflow-x: auto;
     font-size: 13px;
     color: #767676;
     margin-bottom: 10px;
