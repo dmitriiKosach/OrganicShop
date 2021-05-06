@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { getInputElementBig, getInputElementSmall, getSelection } from "../utility/input_element";
-import { CATEGORIES, UNITS } from "../config/config_categories";
+import React, { useEffect, useState } from 'react';
+import { getInputElementBig, getInputElementSmall, getSelection } from '../utility/input_element';
+import { CATEGORIES, UNITS } from '../config/config_categories';
 
 const ProductForm = (props) => {
 

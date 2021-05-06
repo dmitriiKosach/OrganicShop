@@ -1,5 +1,5 @@
-import React from "react";
-import { CURRENCY } from "../config/config_products";
+import React from 'react';
+import { CURRENCY } from '../config/config_paypal';
 
 const ProductListTable = (props) => {
 

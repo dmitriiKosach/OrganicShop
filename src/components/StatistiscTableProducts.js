@@ -1,5 +1,5 @@
-import React from "react";
-import { getStatistics } from "../utility/function";
+import React from 'react';
+import { getStatistics } from '../utility/function';
 
 const StatisticsTableProducts = (props) => {
 

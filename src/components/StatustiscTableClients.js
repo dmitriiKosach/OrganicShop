@@ -1,6 +1,6 @@
-import React from "react";
-import { CURRENCY } from "../config/config_products";
-import { getStatistics } from "../utility/function";
+import React from 'react';
+import { CURRENCY } from '../config/config_paypal';
+import { getStatistics } from '../utility/function';
 
 const StatisticsTableClients = (props) => {
     let arrayEntriesClients = [];

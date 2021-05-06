@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import buttonClose from '../images/button-close.svg';
 import {useSelector} from 'react-redux';
-import { CURRENCY } from '../config/config_products';
+import { CURRENCY } from '../config/config_paypal';
 
 const ProductSketch = (props) => {
 

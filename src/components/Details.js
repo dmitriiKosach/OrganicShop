@@ -1,6 +1,6 @@
-import React from "react";
-import PayPalCheckoutButton from "./PayPalCheckoutButton";
-import { CURRENCY } from "../config/config_products";
+import React from 'react';
+import PayPalCheckoutButton from './PayPalCheckoutButton';
+import { CURRENCY } from '../config/config_paypal';
 
 const Details = (props) => {
 

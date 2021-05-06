@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
-import {NavLink} from "react-router-dom";
-import {getErrorMessage, getInputElement} from "../utility/input_element";
-import {DIGITS_PASSWORD, VALIDATE} from "../config/config_registration";
-import Preloader from "./Preloader";
+import React, {useEffect, useState} from 'react';
+import {NavLink} from 'react-router-dom';
+import {getErrorMessage, getInputElement} from '../utility/input_element';
+import {DIGITS_PASSWORD, VALIDATE} from '../config/config_registration';
+import Preloader from './Preloader';
 
 export default function Login (props){
 
@@ -48,7 +48,7 @@ export default function Login (props){
         }
         setErrors({...errors, password: textError});
     };
-    
+
     const onFacebookAuth = () => {
         setIsLoader(true);
         return authService.facebookAuth()

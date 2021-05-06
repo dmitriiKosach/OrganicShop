@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {getInputElementSmall} from "../utility/input_element";
-import {useSelector} from "react-redux";
-import _ from "lodash";
-import ProductSketchContainer from "./ProductSketchContainer";
-import $ from "jquery";
+import {getInputElementSmall} from '../utility/input_element';
+import {useSelector} from 'react-redux';
+import _ from 'lodash';
+import ProductSketchContainer from './ProductSketchContainer';
+import $ from 'jquery';
 
 
 const Search = (props) => {

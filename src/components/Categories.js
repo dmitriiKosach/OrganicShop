@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {LINKS_CATEGORIES} from '../config/config_categories';
-import Product from "./Product";
+import Product from './Product';
 
 
 const Categories = (props) => {

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {getErrorMessage, getInputElement} from "../utility/input_element";
-import {DIGITS_NAME, DIGITS_PASSWORD, VALIDATE} from "../config/config_registration";
+import {getErrorMessage, getInputElement} from '../utility/input_element';
+import {DIGITS_NAME, DIGITS_PASSWORD, VALIDATE} from '../config/config_registration';
 import Preloader from "./Preloader";
 
 const Registration = (props) => {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Preloader from "./Preloader";
+import Preloader from './Preloader';
 
 export default function Logout (props) {
 

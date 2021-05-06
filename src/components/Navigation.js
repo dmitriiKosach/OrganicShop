@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 import {
     LINKS_AUTH,
     LINKS_NAV,

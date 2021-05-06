@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from "react-redux";
-import MyOrdersTable from "./MyOrdersTable";
-import Preloader from "./Preloader";
-import { getInputElementDate } from "../utility/input_element";
-import _ from "lodash";
+import { useSelector } from 'react-redux';
+import MyOrdersTable from './MyOrdersTable';
+import Preloader from './Preloader';
+import { getInputElementDate } from '../utility/input_element';
+import _ from 'lodash';
 
 const MyOrders = (props) => {
 

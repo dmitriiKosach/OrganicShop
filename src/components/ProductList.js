@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {getRandomNumber} from "../utility/random";
-import ProductListTable from "./ProductListTable";
-import {DIGITS_ID} from "../config/config_order";
-import {NavLink} from "react-router-dom";
+import {getRandomNumber} from '../utility/random';
+import ProductListTable from './ProductListTable';
+import {DIGITS_ID} from '../config/config_order';
+import {NavLink} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-import $ from "jquery";
-import _ from "lodash";
+import $ from 'jquery';
+import _ from 'lodash';
 
 const ProductList = (props) => {
 

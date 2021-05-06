@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {useSelector} from "react-redux";
-import ProductListContainer from "./ProductListContainer";
-import Preloader from "./Preloader";
+import {useSelector} from 'react-redux';
+import ProductListContainer from './ProductListContainer';
+import Preloader from './Preloader';
 
 const Order= (props) => {
 

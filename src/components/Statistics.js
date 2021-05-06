@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from "react-redux";
-import StatisticsTableProducts from "./StatistiscTableProducts";
-import StatisticTableClients from "./StatustiscTableClients";
-import {getInputElementDate, getOptions} from "../utility/input_element";
-import {UNITS} from "../config/config_statistics";
-import _ from "lodash";
-import { CURRENCY } from '../config/config_products';
-import Chart from "./Chart";
+import {useSelector} from 'react-redux';
+import StatisticsTableProducts from './StatistiscTableProducts';
+import StatisticTableClients from './StatustiscTableClients';
+import {getInputElementDate, getOptions} from '../utility/input_element';
+import {UNITS} from '../config/config_statistics';
+import _ from 'lodash';
+import { CURRENCY } from '../config/config_paypal';
+import Chart from './Chart';
 import { getDataBase, getStatistics } from '../utility/function';
 
 const Statistics = (props) => {

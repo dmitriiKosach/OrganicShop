@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import {useSelector} from "react-redux";
-import ProductForm from "./ProductForm";
-import Preloader from "./Preloader";
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
+import ProductForm from './ProductForm';
+import Preloader from './Preloader';
 
 const Product = (props) => {
 

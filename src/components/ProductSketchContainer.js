@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import ProductSketch from "./ProductSketch";
-import {actionUpdateProductList} from "../store/actions";
+import { connect } from 'react-redux';
+import ProductSketch from './ProductSketch';
+import {actionUpdateProductList} from '../store/actions';
 
 
 let mapStateToProps = (state) => {

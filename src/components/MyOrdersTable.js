@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import Details from "./Details";
-import $ from 'jquery'
-import {useSelector} from "react-redux";
-import { CURRENCY } from "../config/config_products";
+import React, {useState} from 'react';
+import Details from './Details';
+import $ from 'jquery';
+import {useSelector} from 'react-redux';
+import { CURRENCY } from '../config/config_paypal';
 
 const MyOrdersTable = (props) => {
 
