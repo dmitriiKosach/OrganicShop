@@ -155,7 +155,7 @@ const Statistics = (props) => {
                                 <div className="properties-filter_title">
                                     <span>Statistics by status orders:</span>
                                 </div>
-                                <select required className="filter-order" required onChange={handleChangeStatistics} name="orderStatus">
+                                <select required className="filter-order" onChange={handleChangeStatistics} name="orderStatus">
                                     {getOptions([...UNITS])}
                                 </select>
                             </div>

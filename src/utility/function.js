@@ -1,5 +1,3 @@
-import React from "react";
-
 export function getStatistics(orders, categoriesStatus, typeStat) {
     let res = new Map();
     typeStat === "statProducts"
