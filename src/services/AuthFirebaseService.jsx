@@ -14,9 +14,9 @@ export default class AuthFirebaseService {
     async registerNewUser(email, password, displayName, photoURL) {
         let user = null;
         //nullify empty arguments
-        // for (let i = 0; i < arguments.length; i++) {
-        //     arguments[i] = arguments[i] ? arguments[i] : null;
-        // }
+        for (let i = 0; i < arguments.length; i++) {
+            arguments[i] = arguments[i] ? arguments[i] : null;
+        }
         return this.auth.createUserWithEmailAndPassword(email, password)
             .then(function (credential) {
                 user = firebase.auth().currentUser;
