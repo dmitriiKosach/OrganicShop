@@ -84,10 +84,11 @@ input::-webkit-outer-spin-button {
 
 /*-----------Header--------------*/
 .header{
-    height: 50px;
+    height: 56px;
     position: fixed;
     top: 0;
     width: 100%;
+    padding-top: 4px;
     background-color: rgb(241, 241, 243);
     z-index: 1;
 }
@@ -137,6 +138,11 @@ input::-webkit-outer-spin-button {
 /*-----------Navigation--------------*/
 .nav-item{
     list-style: none;
+    justify-content: center;
+    transition: all .3s linear;
+    margin-right: 5px;
+    transition: all .3s linear;
+    text-align: center;
 }
 
 .nav-link {
@@ -144,16 +150,20 @@ input::-webkit-outer-spin-button {
     text-decoration: none;
     color: #000000;
     transition: color .2s linear;
+    cursor: pointer;
+
 }
 
 .nav-link:hover{
     color: #58b85a;
 }
 
+
 .nav-link-title{
     font-size: 17px;
     padding: 5px 0;
 }
+
 /*-----------End Navigation-------------*/
 
 /*---------UserInfo---------*/
@@ -163,18 +173,15 @@ input::-webkit-outer-spin-button {
 
 .info-wrapper{
     margin-left: 15px;
-    color: #000000;
 }
 
 .info-title{
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.2;
-    transition: color .2s linear;
+    color: #000000;
 }
-.info-title:hover{
-    color: #58b85a;
-}
+
 /*---------End UserInfo---------*/
 
 /*-----------Shop--------------*/
@@ -1084,4 +1091,48 @@ margin-right: 0px;
 .statistics-footer{
     margin: 0 auto;
 }
+
+.usermenu-wrapper{
+    display: none;
+    position: absolute;
+    margin-left: 15px;
+    width: 140px;
+
+}
+
+.usermenu:hover .usermenu-wrapper{
+    display: block;
+}
+.usermenu:hover .info-title{
+    color: #58b85a;
+}
+
+.menu-item{
+    display: flex;
+    border: 1px solid #dddddd;
+    border-radius: 40px;
+    background-color: rgb(241, 241, 243);
+    justify-content: center;
+    margin-bottom: 5px;
+    transition: all .3s linear;
+}
+
+.menu-item:hover{
+    background-color: #58b85a;
+    color: #ffffff;
+    transform: translateX(-15px);
+    box-shadow: 2px 2px 10px #a1a1a1;
+    border: 1px solid #58b85a;
+}
+
+.menu-item:hover .menu-item_title{
+    color: #ffffff;
+}
+
+.menu-item_title{
+    padding: 5px 0;
+}
+
+
+
 

@@ -1,15 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import StatisticsTableProducts from './StatistiscTableProducts';
 import StatisticTableClients from './StatustiscTableClients';
-import {getInputElementDate, getOptions} from '../utility/input_element';
-import {UNITS} from '../config/config_statistics';
+import { getInputElementDate, getOptions } from '../utility/input_element';
+import { UNITS } from '../config/config_statistics';
 import _ from 'lodash';
 import { CURRENCY } from '../config/config_paypal';
 import Chart from './Chart';
 import { getDataBase, getStatistics } from '../utility/function';
 
 const Statistics = (props) => {
+    const userData = useSelector(state => state.userData);
     const orders = useSelector(state => state.orders);
     const [ordersFilter, setOrderFilter] = useState([]);
     const [orderStatus, setOrderStatus] = useState("all orders");
@@ -70,55 +71,59 @@ const Statistics = (props) => {
         let tempNumberOfSales = 0;
         let tempAverageCheck = 0;
 
-        let temp = [...orders];
-        if(!isInvalidFilterDates){
+        let temp = userData.isAdmin ? [...orders] : _.filter(orders, order => {
+            if (order.email === userData.email) {
+                return order;
+            }
+        });
+        if (!isInvalidFilterDates) {
             tempTotalPrice = 0;
             tempNumberOfSales = 0;
             tempAverageCheck = 0;
             temp = _.filter(temp, order => {
-                if(new Date(order.date).valueOf() >= new Date(dateFrom).valueOf() - 86400000  && new Date(order.date).valueOf() <= new Date(dateTo).valueOf()){
+                if (new Date(order.date).valueOf() >= new Date(dateFrom).valueOf() - 86400000 && new Date(order.date).valueOf() <= new Date(dateTo).valueOf()) {
                     tempTotalPrice += order.totalPrice;
                     tempNumberOfSales++;
-                    tempAverageCheck = tempTotalPrice/tempNumberOfSales;
+                    tempAverageCheck = tempTotalPrice / tempNumberOfSales;
                     return order;
                 }
             })
         }
-        if(orderStatus === "only paid"){
+        if (orderStatus === "only paid") {
             tempTotalPrice = 0;
             tempNumberOfSales = 0;
             tempAverageCheck = 0;
-            temp =  _.filter(temp, order => {
+            temp = _.filter(temp, order => {
                 if (order.isPaid) {
                     tempTotalPrice += order.totalPrice;
                     tempNumberOfSales++;
-                    tempAverageCheck = tempTotalPrice/tempNumberOfSales;
+                    tempAverageCheck = tempTotalPrice / tempNumberOfSales;
                     return order;
                 }
             })
         }
-        if(orderStatus === "only not paid"){
+        if (orderStatus === "only not paid") {
             tempTotalPrice = 0;
             tempNumberOfSales = 0;
             tempAverageCheck = 0;
-            temp =  _.filter(temp, order => {
+            temp = _.filter(temp, order => {
                 if (!order.isPaid) {
                     console.log(order.totalPrice)
                     tempTotalPrice += order.totalPrice;
                     tempNumberOfSales++;
-                    tempAverageCheck = tempTotalPrice/tempNumberOfSales;
+                    tempAverageCheck = tempTotalPrice / tempNumberOfSales;
                     return order;
                 }
             })
         }
-        if(orderStatus === "all orders"){
+        if (orderStatus === "all orders") {
             tempTotalPrice = 0;
             tempNumberOfSales = 0;
             tempAverageCheck = 0;
             temp.map(order => {
                 tempTotalPrice += order.totalPrice;
                 tempNumberOfSales++;
-                tempAverageCheck = tempTotalPrice/tempNumberOfSales;
+                tempAverageCheck = tempTotalPrice / tempNumberOfSales;
             });
         }
         setTotalPriceAllOrders(tempTotalPrice.toFixed(2));
@@ -142,7 +147,7 @@ const Statistics = (props) => {
                 </div>
                 <div className="content-body">
                     <div className="statistics-header">
-                        <form  ref={(ref) => formRef = ref} onSubmit={onSubmit} noValidate>
+                        <form ref={(ref) => formRef = ref} onSubmit={onSubmit} noValidate>
                             <div className="properties-filter">
                                 <div className="properties-filter_title">
                                     <span>Statistics by product category:</span>
@@ -166,7 +171,7 @@ const Statistics = (props) => {
                                 {getInputElementDate('input input-date', 'input-date_from', 'date', 'date-from', 'date-from', handleChangeDate, 'yyyy-mm-dd')}
                                 <span>-</span>
                                 {getInputElementDate('input input-date', 'input-date_to', 'date', 'date-to', 'date-to', handleChangeDate, 'yyyy-mm-dd')}
-                                <button  className="button-submit button-submit_small " id="submit" type="submit">
+                                <button className="button-submit button-submit_small " id="submit" type="submit">
                                     Submit
                                 </button>
                             </div>
@@ -188,15 +193,12 @@ const Statistics = (props) => {
                             </div>
                         </div>
                         <div className="statistics-table">
-                            <StatisticsTableProducts orders={ordersFilter} categoriesStatus={categoriesStatus} label={label}/>
-                            <StatisticTableClients orders={ordersFilter}/>
+                            <StatisticsTableProducts orders={ordersFilter} categoriesStatus={categoriesStatus} label={label} />
+                            {userData.isAdmin ? <StatisticTableClients orders={ordersFilter} /> : <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, "statProducts"), label)} />}
                         </div>
                         <div className="statistics-charts">
-
-                                <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, "statProducts"), label) }/>
-
-
-                                <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, ""), "")} />
+                            {userData.isAdmin ? <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, "statProducts"), label)} /> : " "}
+                            {userData.isAdmin ? <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, ""), "")} /> : " "}
 
                         </div>
                         <div className="statistics-footer">
