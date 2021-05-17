@@ -85,48 +85,48 @@ const ProductForm = (props) => {
     return <React.Fragment>
         <div className="content">
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- Product Addition Form -</span>
+                <div className="content__header">
+                    <span className="content__header-title">- Product Addition Form -</span>
                 </div>
-                <div className="content-body">
-                    <div className="form-product">
+                <div className="content__body">
+                    <div className="form__product">
                         <form className="form" onSubmit={onSubmit} noValidate>
-                            <div className="form-group_wrapper">
-                                <div className="form-group">
-                                    {getSelection('input input-selection', 'input-category', 'Product category', handleChangeCategory, 'category', 'input-category', [' ', ...CATEGORIES])}
+                            <div className="form__group-wrapper">
+                                <div className="form__group">
+                                    {getSelection('input input__selection', 'input__category', 'Product category', handleChangeCategory, 'category', 'input-category', [' ', ...CATEGORIES])}
                                 </div>
-                                <div className="form-group">
-                                    {getInputElementSmall('input input-selection', 'input-article', 'Product article', 'number', 'article', 'input-article', handleChangeArticle, 'Please enter product article')}
+                                <div className="form__group">
+                                    {getInputElementSmall('input input__selection', 'input__article', 'Product article', 'number', 'article', 'input-article', handleChangeArticle, 'Please enter product article')}
                                 </div>
-                                <div className="form-group">
-                                    {getInputElementSmall('input input-selection', 'input-name', 'Product name', 'text', 'name', 'input-name', handleChangeName, 'Please enter product name')}
-                                </div>
-                            </div>
-
-                            <div className="form-group">
-                                {getInputElementBig('input input-element', 'input-photoURL', 'Product photo', 'url', 'photoURL', 'input-photoURL', handleChangePhoto, 'Please enter url address product photo', 'https://.*')}
-                            </div>
-                            <div className="form-group">
-                                {getInputElementBig('input input-element', 'input-description', 'Product description', 'text', 'description', 'input-description', handleChangeDescription, 'Please enter product description')}
-                            </div>
-                            <div className="form-group_wrapper">
-                                <div className="form-group">
-                                    {getInputElementSmall('input input-selection', 'input-price', 'Product price', 'number', 'price', 'input-price', handleChangePrice, 'Please enter product price')}
-                                </div>
-                                <div className="form-group">
-                                    {getSelection('input input-selection', 'input-unit', 'Product unit', handleChangeUnit, 'unit', 'input-unit', [' ', ...UNITS])}
-                                </div>
-                                <div className="form-group">
-                                    {getInputElementSmall('input input-selection', 'input-reserve', 'Product reserve', 'number', 'reserve', 'input-reserve', handleChangeReserve, 'Please enter product reserve')}
+                                <div className="form__group">
+                                    {getInputElementSmall('input input__selection', 'input__name', 'Product name', 'text', 'name', 'input-name', handleChangeName, 'Please enter product name')}
                                 </div>
                             </div>
 
-                            <div className="button-group">
-                                <div className="button-group_wrapper">
-                                    <button className="button-submit" disabled={isInvalid} id="submit" type="submit">
+                            <div className="form__group">
+                                {getInputElementBig('input input__element', 'input__photoURL', 'Product photo', 'url', 'photoURL', 'input-photoURL', handleChangePhoto, 'Please enter url address product photo', 'https://.*')}
+                            </div>
+                            <div className="form__group">
+                                {getInputElementBig('input input__element', 'input__description', 'Product description', 'text', 'description', 'input-description', handleChangeDescription, 'Please enter product description')}
+                            </div>
+                            <div className="form__group-wrapper">
+                                <div className="form__group">
+                                    {getInputElementSmall('input input__selection', 'input__price', 'Product price', 'number', 'price', 'input-price', handleChangePrice, 'Please enter product price')}
+                                </div>
+                                <div className="form__group">
+                                    {getSelection('input input__selection', 'input__unit', 'Product unit', handleChangeUnit, 'unit', 'input-unit', [' ', ...UNITS])}
+                                </div>
+                                <div className="form__group">
+                                    {getInputElementSmall('input input__selection', 'input__reserve', 'Product reserve', 'number', 'reserve', 'input-reserve', handleChangeReserve, 'Please enter product reserve')}
+                                </div>
+                            </div>
+
+                            <div className="button__group">
+                                <div className="button__group-wrapper">
+                                    <button className="button__submit" disabled={isInvalid} id="submit" type="submit">
                                         Confirm
                                     </button>
-                                    <button className="button-close" type="button" onClick={() => props.changeFlagFn(0)} >
+                                    <button className="button__close" type="button" onClick={() => props.changeFlagFn(0)} >
                                         Close
                                     </button>
                                 </div>

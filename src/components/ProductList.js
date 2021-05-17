@@ -3,7 +3,8 @@ import {getRandomNumber} from '../utility/random';
 import ProductListTable from './ProductListTable';
 import {DIGITS_ID} from '../config/config_order';
 import {NavLink} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+import { PATH_ORDERS } from '../config/config_header';
 import $ from 'jquery';
 import _ from 'lodash';
 
@@ -77,7 +78,7 @@ const ProductList = (props) => {
                 <div className="mod__content">
                     <h2 className="mod__content-title">Order #{orderID}
                         <br/>was created successfully!!!
-                        <br/>To payment for the order click <NavLink className="mod__content-link" to='/my_orders'>"My Order"</NavLink>!
+                        <br />To payment for the order click <NavLink className="mod__content-link" to={PATH_ORDERS}>{user.isAdmin ? "Orders" : "My Orders"}</NavLink>!
                     </h2>
                 </div>
             </div>

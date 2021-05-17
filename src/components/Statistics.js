@@ -142,67 +142,67 @@ const Statistics = (props) => {
     return <React.Fragment>
         <div className="content" >
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- Statistics -</span>
+                <div className="content__header">
+                    <span className="content__header-title">{userData.isAdmin ? "- Statistics -" : "- My statistics -"}</span>
                 </div>
-                <div className="content-body">
-                    <div className="statistics-header">
+                <div className="content__body">
+                    <div className="statistics__header">
                         <form ref={(ref) => formRef = ref} onSubmit={onSubmit} noValidate>
-                            <div className="properties-filter">
-                                <div className="properties-filter_title">
+                            <div className="properties__filter">
+                                <div className="properties__filter-title">
                                     <span>Statistics by product category:</span>
                                 </div>
-                                <select className="filter-category" onChange={handleChangeStatistics} name="categories">
+                                <select className="filter__category" onChange={handleChangeStatistics} name="categories">
                                     {getOptions(["no", "yes"])}
                                 </select>
                             </div>
-                            <div className="properties-filter">
-                                <div className="properties-filter_title">
+                            <div className="properties__filter">
+                                <div className="properties__filter-title">
                                     <span>Statistics by status orders:</span>
                                 </div>
-                                <select required className="filter-order" onChange={handleChangeStatistics} name="orderStatus">
+                                <select required className="filter__order" onChange={handleChangeStatistics} name="orderStatus">
                                     {getOptions([...UNITS])}
                                 </select>
                             </div>
-                            <div className="properties-filter">
+                            <div className="properties__filter">
                                 <div>
                                     <span>Statistics by date:</span>
                                 </div>
-                                {getInputElementDate('input input-date', 'input-date_from', 'date', 'date-from', 'date-from', handleChangeDate, 'yyyy-mm-dd')}
+                                {getInputElementDate('input input__date', 'input__date-from', 'date', 'date-from', 'date-from', handleChangeDate, 'yyyy-mm-dd')}
                                 <span>-</span>
-                                {getInputElementDate('input input-date', 'input-date_to', 'date', 'date-to', 'date-to', handleChangeDate, 'yyyy-mm-dd')}
-                                <button className="button-submit button-submit_small " id="submit" type="submit">
+                                {getInputElementDate('input input__date', 'input__date-to', 'date', 'date-to', 'date-to', handleChangeDate, 'yyyy-mm-dd')}
+                                <button className="button__submit button__submit-small " id="submit" type="submit">
                                     Submit
                                 </button>
                             </div>
                         </form>
                     </div>
-                    <div className="statistic-body">
-                        <div className="statistics-properties">
-                            <div className="properties-wrapper">
+                    <div className="statistic__body">
+                        <div className="statistics__properties">
+                            <div className="properties__wrapper">
                                 <span>Total orders:</span>
-                                <div className="properties-content">{numberOfSales}</div>
+                                <div className="properties__content">{numberOfSales}</div>
                             </div>
-                            <div className="properties-wrapper">
+                            <div className="properties__wrapper">
                                 <span>Orders amount: {CURRENCY}</span>
-                                <div className="properties-content">{totalPriceAllOrders}</div>
+                                <div className="properties__content">{totalPriceAllOrders}</div>
                             </div>
-                            <div className="properties-wrapper">
+                            <div className="properties__wrapper">
                                 <span>Average check: {CURRENCY}</span>
-                                <div className="properties-content">{averageCheck}</div>
+                                <div className="properties__content">{averageCheck}</div>
                             </div>
                         </div>
-                        <div className="statistics-table">
+                        <div className="statistics__table">
                             <StatisticsTableProducts orders={ordersFilter} categoriesStatus={categoriesStatus} label={label} />
                             {userData.isAdmin ? <StatisticTableClients orders={ordersFilter} /> : <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, "statProducts"), label)} />}
                         </div>
-                        <div className="statistics-charts">
+                        <div className="statistics__charts">
                             {userData.isAdmin ? <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, "statProducts"), label)} /> : " "}
                             {userData.isAdmin ? <Chart database={getDataBase(getStatistics(ordersFilter, categoriesStatus, ""), "")} /> : " "}
 
                         </div>
-                        <div className="statistics-footer">
-                            <button className="button-close button-close_small" onClick={resetFilter} id="submit" type="submit">
+                        <div className="statistics__footer">
+                            <button className="button__close button__close-small" onClick={resetFilter} id="submit" type="submit">
                                 Reset
                         </button>
                         </div>

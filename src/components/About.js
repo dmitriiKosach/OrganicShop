@@ -5,10 +5,10 @@ const About = () => {
     return <React.Fragment>
         <div className="content" >
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- About -</span>
+                <div className="content__header">
+                    <span className="content__header-title">- About -</span>
                 </div>
-                <div className="content-body">
+                <div className="content__body">
                 </div>
             </div>
         </div>

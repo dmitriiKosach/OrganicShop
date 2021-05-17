@@ -26,7 +26,7 @@ const ProductListTable = (props) => {
             <td>{product.quantity + ' ' + product.unit}</td>
             <td>{CURRENCY + ' ' + (product.price * (product.unit === "gram" ? product.quantity / 100 : product.quantity)).toFixed(2)}</td>
             <td>
-                <button className="button-remove" type="button" onClick={() => removeProductFromListFn(product.article)}>
+                <button className="button__remove" type="button" onClick={() => removeProductFromListFn(product.article)}>
                     <i className="far fa-trash-alt"/>
                 </button>
             </td>
@@ -50,13 +50,13 @@ const ProductListTable = (props) => {
                 {productItem}
                 </tbody>
             </table>
-            <div className="table-footer">
-                <span className="table-total table-total_subtext">Subtotal ({item} {productList.length}):</span>
-            <span className="table-total table-total_unit">{CURRENCY}</span>
-                <span className="table-total table-total_price">{totalPrice.toFixed(2)}</span>
+            <div className="table__footer">
+                <span className="table__total table__total-subtext">Subtotal ({item} {productList.length}):</span>
+            <span className="table__total table__total-unit">{CURRENCY}</span>
+                <span className="table__total table__total-price">{totalPrice.toFixed(2)}</span>
             </div>
-            <div className="button-group_table">
-                <button className="button-submit" disabled={productList.length === 0}  onClick={() => createOrderFn(totalPrice)}>Create order</button>
+            <div className="button__group-table">
+                <button className="button__submit" disabled={productList.length === 0}  onClick={() => createOrderFn(totalPrice)}>Create order</button>
             </div>
     </React.Fragment>
 }

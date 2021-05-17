@@ -1,4 +1,4 @@
-export const PATH_SHOP = '/';
+export const PATH_HOME = '/home';
 export const PATH_CATEGORIES = '/categories';
 export const PATH_CONTACT = '/contact';
 export const PATH_RECIPES = '/recipes';
@@ -15,7 +15,7 @@ export const PATH_ACCOUNT = '/account';
 
 
 export const LINKS_NAV = [
-    { path: PATH_SHOP, label: 'Home' },
+    { path: PATH_HOME, label: 'Home' },
     { path: PATH_CATEGORIES, label: 'Categories' },
     { path: PATH_RECIPES, label: 'Recipes' },
     { path: PATH_ORDERS, label: 'Orders' },

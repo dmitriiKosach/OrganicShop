@@ -24,8 +24,8 @@ const StatisticsTableProducts = (props) => {
     })
 
     return <React.Fragment>
-        <div className="table-content">
-            <div className="table-title">
+        <div className="table__content">
+            <div className="table__title">
                 <span>{"Most popular " + props.label + ":"}</span>
             </div>
             <table>

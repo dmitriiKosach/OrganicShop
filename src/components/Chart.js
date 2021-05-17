@@ -14,7 +14,7 @@ const Chart = (props) => {
     };
 
     return <React.Fragment>
-        <div className="chart-content_wrapper">
+        <div className="chart__content-wrapper">
             <Bar
                 className="chart"
                 data={data}

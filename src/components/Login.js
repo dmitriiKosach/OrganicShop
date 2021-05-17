@@ -131,38 +131,38 @@ export default function Login (props){
     return <React.Fragment>
         <div className="content" >
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- Sign in -</span>
+                <div className="content__header">
+                    <span className="content__header-title">- Sign in -</span>
                 </div>
-                <div className="content-body">
-                    <div className="form-wrapper">
+                <div className="content__body">
+                    <div className="form__wrapper">
                         <form className="form" onSubmit={onSubmit}  noValidate>
-                            <div className="login-social">
-                                <button className="login-social_icon" onClick={onFacebookAuth}><i className="fab fa-facebook" /></button>
-                                <button className="login-social_icon" onClick={onGoogleAuth}><i className="fab fa-google" /></button>
-                                <button className="login-social_icon" ><i className="fab fa-twitter"/></button>
+                            <div className="login__social">
+                                <button className="login__social-icon" onClick={onFacebookAuth}><i className="fab fa-facebook" /></button>
+                                <button className="login__social-icon" onClick={onGoogleAuth}><i className="fab fa-google" /></button>
+                                <button className="login__social-icon" ><i className="fab fa-twitter"/></button>
                             </div>
-                            <div className="login-body">
-                                <div className="form-group">
-                                    {getInputElement((errors.email ? 'input-error error-element' : 'input input-login'), 'email', '', 'email',
+                            <div className="login__body">
+                                <div className="form__group">
+                                    {getInputElement((errors.email ? 'input__error error__element' : 'input input__login'), 'email', '', 'email',
                                         'email', 'email', handleChangeEmail, 'Username')}
-                                    {errors.email.length > 0 && (getErrorMessage('errorMessage', errors.email))}
+                                    {errors.email.length > 0 && (getErrorMessage('error__message', errors.email))}
                                 </div>
-                                <div className="form-group">
-                                    {getInputElement((errors.password || errors.confirm ? 'input-error error-element' : 'input input-login'), 'password', '', 'password',
+                                <div className="form__group">
+                                    {getInputElement((errors.password || errors.confirm ? 'input__error error__element' : 'input input__login'), 'password', '', 'password',
                                         'password', 'password', handleChangePassword, 'Password')}
-                                    {errors.password.length > 0 && (getErrorMessage('errorMessage', errors.password))}
+                                    {errors.password.length > 0 && (getErrorMessage('error__message', errors.password))}
                                 </div>
                             </div>
-                            <div className="button-group">
-                                <div className="button-group_wrapper">
-                                    <button disabled={isInvalid} className="button-submit" id="submit" type="submit">
+                            <div className="button__group">
+                                <div className="button__group-padding">
+                                    <button disabled={isInvalid} className="button__submit" id="submit" type="submit">
                                         Sign in
                                     </button>
                                 </div>
                             </div>
-                            <div className="login-footer">
-                                <p className="login-footer_options">Not Registered?
+                            <div className="login__footer">
+                                <p className="login__footer-options">Not Registered?
                                     <NavLink to={'/registration'}>  Create an Account</NavLink>
                                 </p>
                             </div>

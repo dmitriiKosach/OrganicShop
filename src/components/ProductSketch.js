@@ -69,41 +69,39 @@ const ProductSketch = (props) => {
     },[count, product]);
 
     return <React.Fragment>
-        <div className="sketch-item">
-            <div className="sketch">
+        <div className="sketch__item">
+            <div className="sketch__wrapper">
                 {userData.isAdmin
-                    ? props.removeProduct ? <button onClick={() => removeProductFn(product)} className="button-remove_product" type="button">
+                    ? props.removeProduct ? <button onClick={() => removeProductFn(product)} className="button__remove-product" type="button">
                         <img src={buttonClose} alt="close" />
                     </button> : null : null}
-                <img className="sketch-photo" src={product.photoURL} alt="" />
-                <div className="sketch-content">
-                    <div className="sketch-content_info">
-                        <span className="sketch-content-info_title">{product.name}</span>
-                        <span className="sketch-content-info_subtitle">{product.description}</span>
+                <img className="sketch__photo" src={product.photoURL} alt="" />
+                <div className="sketch__content">
+                    <div className="sketch__content-info">
+                        <span className="info__title">{product.name}</span>
+                        <span className="info__subtitle">{product.description}</span>
                     </div>
-                    <div className="sketch-content_property">
-                        <div className="sketch-content-property_reserve">
+                    <div className="sketch__content-property">
+                        <div className="property__reserve">
                             <span>Available: {product.reserve.toFixed(2)} {product.unit === "gram" ? "kg" : product.unit }</span>
                         </div>
-                        <div className="sketch-content-property_price">
-                            <div className="price-info">
-                                <span className="price-unit">{CURRENCY}</span>
+                        <div className="property__price">
+                            <div className="price__info">
+                                <span className="price__unit">{CURRENCY}</span>
                                 <div className="price">{product.price}</div>
                             </div>
-                            <div className="price-subtitle">price per {product.unit === "gram" ? '100 ' + product.unit : product.unit}</div>
+                            <div className="price__subtitle">price per {product.unit === "gram" ? '100 ' + product.unit : product.unit}</div>
                         </div>
                     </div>
-                    <div className="sketch-content_buttons">
-                        <div className="button-quantity_wrapper">
-                            <button className="button-count" disabled={isInvalid} onClick={deleteStep} type="button">-</button>
+                    <div className="sketch__content-buttons">
+                        <div className="button__quantity">
+                            <button className="button__count" disabled={isInvalid} onClick={deleteStep} type="button">-</button>
                             <input type="number" value={count} readOnly/>
-                            <button className="button-count" disabled={product.unit === "gram" ? count / 1000 >= product.reserve : count >= product.reserve}  onClick={addStep} type="button">+</button>
+                            <button className="button__count" disabled={product.unit === "gram" ? count / 1000 >= product.reserve : count >= product.reserve}  onClick={addStep} type="button">+</button>
                         </div>
-                        <div className="button-add-to-basket_wrapper">
-                            <button disabled={isInvalid} className="button-add-to-basket" onClick={productHandler}>
-                                <i className="fas fa-cart-plus"/>
-                            </button>
-                        </div>
+                        <button className="button__add-product" disabled={isInvalid} onClick={productHandler}>
+                            <i className="fas fa-cart-plus"/>
+                        </button>
                     </div>
                 </div>
             </div>

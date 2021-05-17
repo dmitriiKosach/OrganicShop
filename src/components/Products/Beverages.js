@@ -33,10 +33,10 @@ const Beverage = (props) => {
     return <React.Fragment>
         <div className="content">
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- Beverage -</span>
+                <div className="content__header">
+                    <span className="content__header-title">- Beverage -</span>
                 </div>
-                <div className="content-body">
+                <div className="content__body">
                     {productItem}
                 </div>
                 {isLoader ? <Preloader/> : ''}

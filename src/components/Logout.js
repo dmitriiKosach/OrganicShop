@@ -24,20 +24,20 @@ export default function Logout (props) {
     return <React.Fragment>
         <div className="content">
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- Sign out -</span>
+                <div className="content__header">
+                    <span className="content__header-title">- Sign out -</span>
                 </div>
-                <div className="content-body">
-                    <div className="form-wrapper_logout">
+                <div className="content__body">
+                    <div className="logout">
                         <form className="form" onSubmit={onLogout} noValidate>
-                            <div className="logout-body">
-                                <h2 className="logout-title">
-                                    Thank you! <br /> See you again :)!
+                            <div className="logout__body">
+                                <h2 className="logout__title">
+                                    Thank you! <br /> See you again :)
                                 </h2>
                             </div>
-                            <div className="button-group">
-                                <div className="button-group_wrapper">
-                                    <button className="button-close_logout" type="submit">
+                            <div className="button__group">
+                                <div className="button__group-wrapper">
+                                    <button className="button__close-logout" type="submit">
                                         Sign out
                             </button>
                                 </div>

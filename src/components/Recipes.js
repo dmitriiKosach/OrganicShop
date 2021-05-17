@@ -5,8 +5,8 @@ const Recipes = () => {
     return <React.Fragment>
         <div className="content">
             <div className="container">
-                <div className="content-header">
-                    <span className="title">- Recipes -</span>
+                <div className="content__header">
+                    <span className="content__header-title">- Recipes -</span>
                 </div>
 
             </div>

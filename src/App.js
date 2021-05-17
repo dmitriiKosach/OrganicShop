@@ -14,8 +14,9 @@ import {
     PATH_RECIPES,
     PATH_REGISTRATION,
     PATH_SEARCH,
-    PATH_SHOP,
-    PATH_STATISTICS
+    PATH_HOME,
+    PATH_STATISTICS,
+    PATH_ACCOUNT
 } from "./config/config_header";
 import {
     PATH_BEVERAGES,
@@ -31,7 +32,7 @@ import {
     PATH_VEGETABLES,
     PATH_VINEGAR_OIL
 } from './config/config_categories';
-import Shop from "./components/Shop";
+import Home from "./components/Home";
 import About from "./components/About";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
@@ -61,6 +62,7 @@ import AuthFirebaseService from "./services/AuthFirebaseService";
 import OrdersFirebaseService from "./services/OrdersFirebaseService";
 import ProductsFirebaseService from "./services/ProductsFirebaseService";
 import Statistics from "./components/Statistics";
+import Account from './components/Account';
 
 function App() {
     const authService = new AuthFirebaseService();
@@ -69,6 +71,7 @@ function App() {
     const dispatch = useDispatch(); //react hook possibility to update global store
     const userData = useSelector(state => state.userData);
     const [isNewUser, setIsNewUser] = useState(false);
+
 
     useEffect(() => {
         authService.getUserData().subscribe(userData => {
@@ -94,10 +97,12 @@ function App() {
     //////////////////////////////////////////////////////////////////////
 
     return <React.Fragment>
+
         <Header name={userData.name} />
+        <Redirect to={PATH_HOME} />
         <Switch>
-            <Route path={PATH_SHOP} exact render={() => {
-                return <Shop productsService={productsService} updateProductFilter={updateProductFilter} />
+            <Route path={PATH_HOME} exact render={() => {
+                return <Home productsService={productsService} updateProductFilter={updateProductFilter} />
             }}>
             </Route>
             <Route path={PATH_CATEGORIES} exact render={() => {
@@ -132,13 +137,13 @@ function App() {
             <Route path={PATH_LOGIN} exact render={() => {
                 return !userData.email
                     ? <Login authService={authService} />
-                    : <Redirect to={PATH_SHOP} />
+                    : <Redirect to={PATH_HOME} />
             }}>
             </Route>
             <Route path={PATH_LOGOUT} exact render={() => {
                 return userData.email
                     ? <Logout authService={authService} />
-                    : <Redirect to={PATH_SHOP} />
+                    : <Redirect to={PATH_HOME} />
             }}>
             </Route>
             <Route path={PATH_REGISTRATION} exact render={() => {
@@ -149,6 +154,10 @@ function App() {
             </Route>
             <Route path={PATH_BASKET} exact render={() => {
                 return <Basket ordersService={ordersService} userData={userData} productsService={productsService} />
+            }}>
+            </Route>
+            <Route path={PATH_ACCOUNT} exact render={() => {
+                return <Account/>
             }}>
             </Route>
 

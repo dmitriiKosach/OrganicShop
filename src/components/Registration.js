@@ -106,35 +106,35 @@ const Registration = (props) => {
     return <React.Fragment>
         <div className="content">
                 <div className="container">
-                    <div className="content-header">
-                        <span className="title">- Registration -</span>
+                    <div className="content__header">
+                        <span className="content__header-title">- Registration -</span>
                     </div>
-                    <div className="content-body">
-                        <div className="form-wrapper">
+                    <div className="content__body">
+                        <div className="form__wrapper">
                             <form className="form" onSubmit={onSubmit}  noValidate>
-                                <div className="form-group">
-                                    {getInputElement((errors.displayName ? 'input-error error-element' : 'input input-login'), 'displayName', 'Name', 'text',
+                                <div className="form__group">
+                                    {getInputElement((errors.displayName ? 'input__error error__element' : 'input input__login'), 'displayName', 'Name', 'text',
                                         'displayName', 'displayName', handleChangeName, 'Enter username')}
-                                    {errors.displayName.length > 0 && (getErrorMessage('errorMessage', errors.displayName))}
+                                    {errors.displayName.length > 0 && (getErrorMessage('error__message', errors.displayName))}
                                 </div>
-                                <div className="form-group">
-                                    {getInputElement((errors.email ? 'input-error error-element' : 'input input-login'), 'email', 'Email address', 'email',
+                                <div className="form__group">
+                                    {getInputElement((errors.email ? 'input__error error__element' : 'input input__login'), 'email', 'Email address', 'email',
                                         'email', 'email', handleChangeEmail, 'Enter email address')}
-                                    {errors.email.length > 0 && (getErrorMessage('errorMessage', errors.email))}
+                                    {errors.email.length > 0 && (getErrorMessage('error__message', errors.email))}
                                 </div>
-                                <div className="form-group">
-                                    {getInputElement((errors.password || errors.confirm ? 'input-error error-element' : 'input input-login'), 'password', 'Password', 'password',
+                                <div className="form__group">
+                                    {getInputElement((errors.password || errors.confirm ? 'input__error error__element' : 'input input__login'), 'password', 'Password', 'password',
                                         'password', 'password', handleChangePassword, 'Password')}
-                                    {errors.password.length > 0 && (getErrorMessage('errorMessage', errors.password))}
+                                    {errors.password.length > 0 && (getErrorMessage('error__message', errors.password))}
                                 </div>
-                                <div className="form-group">
-                                    {getInputElement((errors.confirm ? 'input-error error-element' : 'input input-login'), 'confirm', 'Confirm password', 'password',
+                                <div className="form__group">
+                                    {getInputElement((errors.confirm ? 'input__error error__element' : 'input input__login'), 'confirm', 'Confirm password', 'password',
                                         'confirm', 'confirm', handleChangeConfirm, 'Confirm password')}
-                                    {errors.confirm.length > 0 && (getErrorMessage('errorMessage', errors.confirm))}
+                                    {errors.confirm.length > 0 && (getErrorMessage('error__message', errors.confirm))}
                                 </div>
-                                <div className="button-group">
-                                    <div className="button-group_wrapper">
-                                        <button disabled={isInvalid} className="button-submit" id="submit" type="submit">
+                                <div className="button__group">
+                                    <div className="button__group-wrapper">
+                                        <button disabled={isInvalid} className="button__submit" id="submit" type="submit">
                                             Registration
                                         </button>
                                     </div>

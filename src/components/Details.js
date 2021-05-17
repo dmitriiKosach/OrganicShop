@@ -39,11 +39,11 @@ const Details = (props) => {
                 {productItem}
                 </tbody>
             </table>
-            <div className="table-footer">
+            <div className="table__footer">
                 <div>
-                    <span className="table-total table-total_subtext">Subtotal ({item} {props.products.length}):</span>
-                    <span className="table-total table-total_unit">{CURRENCY}</span>
-                    <span className="table-total table-total_price">{props.totalPrice}</span>
+                    <span className="table__total table__total-subtext">Subtotal ({item} {props.products.length}):</span>
+                    <span className="table__total table__total-unit">{CURRENCY}</span>
+                    <span className="table__total table__total-price">{props.totalPrice}</span>
                 </div>
             </div>
             <div>

@@ -24,11 +24,11 @@ const Categories = (props) => {
     };
 
     const categoriesItem = LINKS_CATEGORIES.map(link => {
-        return < div key={link.path} className="card-wrapper" >
+        return < div key={link.path} className="card__wrapper" >
             <NavLink className="card" to={link.path}>
-                <img src={link.image} className="card-img" alt="..." />
-                <div className="card-content">
-                    <span className="card-content_text">{link.title}</span>
+                <img src={link.image} className="card__img" alt="..." />
+                <div className="card__content">
+                    <span className="card__content-title">{link.title}</span>
                 </div>
             </NavLink>
         </div >
@@ -38,15 +38,15 @@ const Categories = (props) => {
         return <React.Fragment>
             <div className="content">
                 <div className="container">
-                    <div className="content-header">
-                        <span className="title">- Food Categories -</span>
+                    <div className="content__header">
+                        <span className="content__header-title">- Food Categories -</span>
                     </div>
-                    <div className="content-body">
+                    <div className="content__body">
                         {categoriesItem}
                     </div>
-                    {isAdmin ? <div className="button-group">
-                        <div className="button-group_wrapper">
-                            <button className="button-submit" onClick={() => changeFlag(1)}>Add product</button>
+                    {isAdmin ? <div className="button__group">
+                        <div className="button__group-wrapper">
+                            <button className="button__submit" onClick={() => changeFlag(1)}>Add product</button>
                         </div>
                     </div> : null}
                 </div>

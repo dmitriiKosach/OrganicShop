@@ -55,12 +55,12 @@ const OrdersTable = (props) => {
                     <td>{CURRENCY + ' ' + order.totalPrice}</td>
                     <td>{order.isPaid ? <i className="far fa-check-circle"/> : <i className="far fa-circle"/>}</td>
                     <td>
-                        <button className="button-remove" type="button" onClick={() => removeOrderFn(order.orderID)}>
+                        <button className="button__remove" type="button" onClick={() => removeOrderFn(order.orderID)}>
                             <i className="far fa-trash-alt"/>
                         </button>
                     </td>
                     <td>
-                        <button className="button-remove" type="button" onClick={() => showDetails(order)} >
+                        <button className="button__remove" type="button" onClick={() => showDetails(order)} >
                             <i className="far fa-eye"/>
                         </button>
                     </td>
@@ -79,13 +79,13 @@ const OrdersTable = (props) => {
                         <td>{order.isPaid ? <i className="far fa-check-circle"/> : <i className="far fa-circle"/>}</td>
                         {userData.isAdmin
                             ? <td>
-                                <button className="button-remove" type="button" onClick={() => removeOrderFn(order.orderID)}>
+                                <button className="button__remove" type="button" onClick={() => removeOrderFn(order.orderID)}>
                                     <i className="far fa-trash-alt"/>
                                 </button>
                             </td>
                             : null}
                         <td>
-                            <button className="button-remove" type="button" onClick={() => showDetails(order)}>
+                            <button className="button__remove" type="button" onClick={() => showDetails(order)}>
                                 {order.isPaid ? <i className="far fa-eye"/> : <i className="fab fa-cc-paypal"/>}
 
                             </button>

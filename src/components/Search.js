@@ -122,37 +122,37 @@ const Search = (props) => {
     return <React.Fragment>
             <div className="content">
                 <div className="container">
-                    <div className="content-header">
-                        <span className="title">- Search product -</span>
+                    <div className="content__header">
+                        <span className="content__header-title">- Search product -</span>
                     </div>
-                    <div className="content-body">
-                        <div className="form-product">
+                    <div className="content__body">
+                        <div className="form__product">
                             <form className="form" ref={(ref) => formRef = ref} onSubmit={onSubmit} noValidate>
-                                <div className="form-group_wrapper">
-                                    <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-category', 'Search by category', 'text', 'category', 'category', handleChange, 'Please enter product category' )}
+                                <div className="form__group-wrapper">
+                                    <div className="form__group">
+                                        {getInputElementSmall('input input__selection', 'input__category', 'Search by category', 'text', 'category', 'category', handleChange, 'Please enter product category' )}
                                     </div>
-                                    <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-name', 'Search by name', 'text', 'name', 'name', handleChange, 'Please enter product name' )}
+                                    <div className="form__group">
+                                        {getInputElementSmall('input input__selection', 'input__name', 'Search by name', 'text', 'name', 'name', handleChange, 'Please enter product name' )}
                                     </div>
-                                    <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-article', 'Search by article', 'number', 'article', 'article', handleChange, 'Please enter product article' )}
-                                    </div>
-                                </div>
-                                <div className="form-group_wrapper form-group-wrapper_price">
-                                    <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-price_min', 'Search from price min, ' + CURRENCY, 'number', 'priceMIN', 'price_min', handleChange, 'Please enter price minimum' )}
-                                    </div>
-                                    <div className="form-group">
-                                        {getInputElementSmall('input input-selection', 'input-price_max', 'Search to price max, ' + CURRENCY, 'number', 'priceMAX', 'price_max', handleChange, 'Please enter price maximum' )}
+                                    <div className="form__group">
+                                        {getInputElementSmall('input input__selection', 'input__article', 'Search by article', 'number', 'article', 'article', handleChange, 'Please enter product article' )}
                                     </div>
                                 </div>
-                                <div className="button-group">
-                                    <div className="button-group_wrapper">
-                                        <button className="button-submit" disabled={isInvalid} id="submit" type="submit">
+                                <div className="form__group-wrapper form__group-price">
+                                    <div className="form__group">
+                                        {getInputElementSmall('input input__selection', 'input__price-min', 'Search from price min, ' + CURRENCY, 'number', 'priceMIN', 'price_min', handleChange, 'Please enter price minimum' )}
+                                    </div>
+                                    <div className="form__group">
+                                        {getInputElementSmall('input input__selection', 'input__price-max', 'Search to price max, ' + CURRENCY, 'number', 'priceMAX', 'price_max', handleChange, 'Please enter price maximum' )}
+                                    </div>
+                                </div>
+                                <div className="button__group">
+                                    <div className="button__group-padding">
+                                        <button className="button__submit" disabled={isInvalid} id="submit" type="submit">
                                             Search
                                         </button>
-                                        <button className="button-close" type="button" onClick={resetFilter} >
+                                        <button className="button__close" type="button" onClick={resetFilter} >
                                             Reset
                                         </button>
                                     </div>
@@ -160,7 +160,7 @@ const Search = (props) => {
                             </form>
                         </div>
                     </div>
-                    <div className="content-body">
+                    <div className="content__body">
                         {productItem}
                     </div>
                 </div>
